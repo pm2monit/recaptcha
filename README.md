@@ -23,12 +23,16 @@ Paket ini menyediakan layanan untuk menghasilkan dan memverifikasi **CAPTCHA** b
            "Recaptcha\\": "path/to/recaptcha/"
        }
    }
-
-
-
+   ```
 ### 1. **Jika Menggunakan Composer (Dari Packagist)**
 
 Anda bisa menambahkannya sebagai dependensi:
 
 ```bash
 composer require pm2monit/recaptcha
+```
+
+## Test Code
+```bash
+./vendor/bin/phpunit --testdox tests
+```
