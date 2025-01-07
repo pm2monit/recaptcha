@@ -1,5 +1,5 @@
 {
-    "name": "captcha/recaptcha",
+    "name": "captchaforce/recaptcha",
     "description": "Simple recaptcha package",
     "type": "library",
     "license": "MIT",
