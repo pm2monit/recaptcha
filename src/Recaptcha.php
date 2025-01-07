@@ -1,10 +1,17 @@
 <?php 
 namespace Recaptcha;
 
+enum CaptchaType: string
+{
+    case TEXT = 'text';
+    case NUMBER = 'number';
+}
+
 class Recaptcha
 {
     private $captchaText;
     private $captchaNumber;
+    private const CAPTCHA_CHARACTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
     public function __construct(int $length)
     {
@@ -15,7 +22,7 @@ class Recaptcha
 
     private function generateCaptchaText(int $length): string
     {
-        $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        $characters = self::CAPTCHA_CHARACTERS;
         $captchaText = '';
 
         for ($i = 0; $i < $length; $i++) {
@@ -43,6 +50,12 @@ class Recaptcha
         return $captcha;
     }
 
+    /**
+     * Membuat image captcha
+     * 
+     * @param string $captcha
+     * @return void
+     */
     private function generateCaptchaImage(string $captcha): void
     {
         header('Content-Type: image/png');
@@ -61,26 +74,39 @@ class Recaptcha
         imagedestroy($image);
     }
 
-    public function verifyCaptcha(string $inputText, string $type): bool
+    /**
+     * Mencocokan hasil captcha
+     * 
+     * string $inputText
+     * @param CaptchaType $type Tipe captcha yang diinginkan (CaptchaType::TEXT atau CaptchaType::NUMBER)
+     * @return boolean
+     */
+    public function verifyCaptcha(string $inputText, CaptchaType $type): bool
     {
-        if ($type === 'text') {
+        if ($type === CaptchaType::TEXT) {
             return strtolower($inputText) === strtolower($this->captchaText);
         }
 
-        if ($type === 'number') {
+        if ($type === CaptchaType::NUMBER) {
             return $inputText === $_SESSION['captcha_code'];
         }
 
         return false;
     }
 
-    public function getCaptcha(string $type): string
+    /**
+     * Mendapatkan captcha berdasarkan tipe
+     * 
+     * @param CaptchaType $type Tipe captcha yang diinginkan (CaptchaType::TEXT atau CaptchaType::NUMBER)
+     * @return string
+     */
+    public function getCaptcha(CaptchaType $type): string
     {
-        if ($type === 'text') {
+        if ($type === CaptchaType::TEXT) {
             return $this->captchaText;
         }
 
-        if ($type === 'number') {
+        if ($type === CaptchaType::NUMBER) {
             return $this->captchaNumber;
         }
 
