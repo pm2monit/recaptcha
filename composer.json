@@ -1,5 +1,5 @@
 {
-    "name": "captcha/recaptcha",
+    "name": "captchaforce/recaptcha",
     "description": "Simple recaptcha package",
     "type": "library",
     "license": "MIT",
@@ -14,5 +14,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require-dev": {
+        "phpunit/phpunit": "^11"
+    }
 }
