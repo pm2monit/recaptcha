@@ -25,7 +25,7 @@ interface RecaptchaInterface
      */
     public static function getCaptcha(CaptchaType $type): string;
 
-        /**
+    /**
      * Generator captcha image.
      *
      * @param string $captcha hasil dari get captcha
