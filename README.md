@@ -55,6 +55,13 @@ Recaptcha::captchaImage(Recaptcha::getCaptcha(CaptchaType::NUMBER));
 ```bash
 Recaptcha::setCaptcha(8);
 ```
+- **Verify Captcha**
+```bash
+use Recaptcha\Recaptcha;
+
+$result =  Recaptcha::verifyCaptcha($text_inputan_user);
+echo $result ? "Captcha valid" : "Captcha tidak valid !";
+```
 
 ## Run Samples
 ```bash
