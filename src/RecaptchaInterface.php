@@ -13,7 +13,7 @@ interface RecaptchaInterface
      * Set captcha text.
      *
      * @param int $length panjang captcha
-     * @return string
+     * @return void
      */
     public static function setCaptcha(int $length): void;
     
