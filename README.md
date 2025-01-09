@@ -59,7 +59,7 @@ Recaptcha::setCaptcha(8);
 ```bash
 use Recaptcha\Recaptcha;
 
-$result =  Recaptcha::verifyCaptcha($text_inputan_user);
+$result = Recaptcha::verifyCaptcha($text_inputan_user);
 echo $result ? "Captcha valid" : "Captcha tidak valid !";
 ```
 
