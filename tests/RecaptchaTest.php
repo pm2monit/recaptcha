@@ -16,8 +16,6 @@ final class RecaptchaTest extends TestCase
         $captcha = Recaptcha::getCaptcha(CaptchaType::TEXT);
         $result = Recaptcha::verifyCaptcha($captcha);
 
-        echo $captcha;
-
         $this->assertTrue($result);
     }
 
