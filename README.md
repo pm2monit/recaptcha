@@ -33,7 +33,7 @@ composer require captchaforce/recaptcha
 ```
 
 ## Implementation Recaptcha
-![Screenshot](assets/screenshot.png)
+![Screenshot](assets/screenshoot.png)
 
 - **CaptchaType Text**
 ```bash
