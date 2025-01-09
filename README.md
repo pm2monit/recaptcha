@@ -29,7 +29,7 @@ Paket ini menyediakan layanan untuk menghasilkan dan memverifikasi **CAPTCHA** b
 Anda bisa menambahkannya sebagai dependensi:
 
 ```bash
-composer require pm2monit/recaptcha
+composer require captchaforce/recaptcha
 ```
 
 ## Implementation Recaptcha
