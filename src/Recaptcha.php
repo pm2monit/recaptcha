@@ -30,7 +30,7 @@ class Recaptcha implements RecaptchaInterface
         $_SESSION['captcha_number'] = self::$captchaNumber;
     }
 
-    public static function getCaptcha(CaptchaType $type): string
+    public static function getCaptcha(string $type): string
     {
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();

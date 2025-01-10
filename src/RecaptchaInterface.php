@@ -1,12 +1,6 @@
 <?php
 namespace Recaptcha;
 
-enum CaptchaType: string
-{
-    case TEXT = 'text';
-    case NUMBER = 'number';
-}
-
 interface RecaptchaInterface
 {
     /**
@@ -20,10 +14,10 @@ interface RecaptchaInterface
     /**
      * Get captcha set property text or number.
      *
-     * @param CaptchaType $type Tipe captcha yang diinginkan (CaptchaType::TEXT atau CaptchaType::NUMBER)
+     * @param string $type Tipe captcha yang diinginkan (CaptchaType::TEXT atau CaptchaType::NUMBER)
      * @return string
      */
-    public static function getCaptcha(CaptchaType $type): string;
+    public static function getCaptcha(string $type): string;
 
     /**
      * Generator captcha image.
