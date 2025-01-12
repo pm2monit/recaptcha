@@ -3,6 +3,7 @@
     "description": "Simple recaptcha package",
     "type": "library",
     "license": "MIT",
+    "version": "1.0.0",  
     "autoload": {
         "psr-4": {
             "Recaptcha\\": "src/"
