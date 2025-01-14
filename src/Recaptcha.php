@@ -78,7 +78,7 @@ class Recaptcha implements RecaptchaInterface
         }
 
         if (!isset($_SESSION['captcha_type'])) {
-            throw new \ErrorException("Jenis captcha tidak dikenal");
+            throw new \ErrorException("Session captcha type not set");
         }
 
         if ($_SESSION['captcha_type'] === CaptchaType::TEXT) {
