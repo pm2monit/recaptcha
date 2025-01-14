@@ -30,7 +30,7 @@ class Recaptcha implements RecaptchaInterface
         $_SESSION['captcha_number'] = self::$captchaNumber;
     }
 
-    public static function getCaptcha(CaptchaType $type): string
+    public static function getCaptcha(string $type): string
     {
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
@@ -78,7 +78,7 @@ class Recaptcha implements RecaptchaInterface
         }
 
         if (!isset($_SESSION['captcha_type'])) {
-            throw new \ErrorException("Jenis captcha tidak dikenal");
+            throw new \ErrorException("Session captcha type not set");
         }
 
         if ($_SESSION['captcha_type'] === CaptchaType::TEXT) {
